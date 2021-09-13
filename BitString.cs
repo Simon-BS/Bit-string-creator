@@ -17,7 +17,7 @@
             {
                 if (_numberOfBits != value)
                 {
-                    _numberOfBits = value >= 1 ? value : 1;
+                    _numberOfBits = value >= 1 || value <= 31 ? value : 1;
                     _createBitString();
                 }
             }
