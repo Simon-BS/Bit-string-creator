@@ -1,3 +1,7 @@
+using System;
+
+namespace KattisTest
+{
     public class BitString
     {
         private int _number;
@@ -11,14 +15,24 @@
                 }
             }
         }
-        public int NumberOfBits { get; set; }
+        private int _numberOfBits;
+        public int NumberOfBits { get => _numberOfBits;
+            set
+            {
+                if (_numberOfBits != value)
+                {
+                    _numberOfBits = value >= 1 ? value : 1;
+                    _createBitString();
+                }
+            }
+        }
         public string String { get; private set; }
 
         public BitString()
         {
-            Number = 0;
-            NumberOfBits = 8;
-            String = "";
+            _number = 0;
+            _numberOfBits = 8;
+            String = "00000000";
         }
         private void _createBitString()
         {
@@ -41,3 +55,4 @@
             String = s;
         }
     }
+}
