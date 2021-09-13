@@ -1,7 +1,3 @@
-using System;
-
-namespace KattisTest
-{
     public class BitString
     {
         private int _number;
@@ -55,4 +51,3 @@ namespace KattisTest
             String = s;
         }
     }
-}
